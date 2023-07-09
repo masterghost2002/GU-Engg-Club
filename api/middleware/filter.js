@@ -4,7 +4,7 @@ const filter = async (req, res, next)=>{
     // _user_email --> the user who is trying to update the fields (details from the token)
     const _user_email = req.user.email;
 
-    // destructuring the fields as change of email, name and registration_no can only be done by admi 
+    // destructuring the fields as change of email, name and registration_no can only be done by admin
     const {new_email, name, new_registration_no} = req.body;
     try {
         const _user = await User.findOne({email:_user_email});
